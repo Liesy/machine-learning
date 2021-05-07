@@ -73,7 +73,8 @@
 \newenvironment{sduDocument}
 {	
 	\begin{center}
-		\huge{山东大学\underline{~\sdu@tokens@college~}学院 \\
+		\Large{山东大学\underline{~\sdu@tokens@college~}学院 \\
+		\vspace{5.2 mm}
 		\underline{~\sdu@tokens@course~}课程实验报告}
 	\end{center}
 	\begin{framed}
@@ -97,7 +98,7 @@
 }
 {
 	\end{framed}
-	\vspace{4 mm}\begin{center}\huge{附录}\end{center}
+	% \vspace{4 mm}\begin{center}\huge{附录}\end{center}
 }
 %\newcommand\sduAppendix{\vspace{4 mm}\begin{center}\huge{附录}\end{center}}
 
