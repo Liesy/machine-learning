@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.11.10)  19 MAY 2021 21:06
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.11.10)  19 MAY 2021 21:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1361,13 +1361,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@snm=\write9
 \openout9 = `slides.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 183.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 183.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 182.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 182.
  (./slides.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 183.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 183.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 182.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 182.
 Package rerunfilecheck Info: File `slides.out' has not changed.
-(rerunfilecheck)             Checksum: DE46614F991D08DA0A93A70D6A2FFCFF;319.
+(rerunfilecheck)             Checksum: 19EBD2DE0EC8A5E2740483DA4C2C6C94;300.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1377,10 +1377,10 @@ Package logreq Info: Writing requests to 'slides.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34621 strings out of 481399
- 716167 string characters out of 5928871
- 1217328 words of memory out of 5000000
- 51341 multiletter control sequences out of 15000+600000
+ 34619 strings out of 481399
+ 716151 string characters out of 5928871
+ 1217290 words of memory out of 5000000
+ 51339 multiletter control sequences out of 15000+600000
  537691 words of font info for 72 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  61i,19n,68p,847b,818s stack positions out of 5000i,500n,10000p,200000b,80000s

@@ -6,4 +6,4 @@
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {3}{方法选用}{8}{0}{3}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {4}{参考}{13}{0}{4}
+\beamer@sectionintoc {4}{写在最后}{13}{0}{4}
