@@ -1,0 +1,183 @@
+\documentclass[aspectratio=43, 12pt, utf8, mathserif]{ctexbeamer} %aspectratio=169
+%导言区
+%\usepackage{ctex}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{ulem} %解决下划线换行紊乱
+\usepackage{caption} %添加标题
+\usepackage{subfigure}
+\usepackage{theorem}
+\usepackage[backend=bibtex,style=numeric-comp,sorting=none]{biblatex} %不列出所有作者
+%\usepackage[backend=bibtex,sorting=none,maxnames=9,minnames=3]{biblatex} %列出所有作者
+\addbibresource{ref.bib} %BibTeX数据文件及位置
+\setbeamerfont{footnote}{size=\tiny} %设置脚注引用文献的字体大小
+\setbeamertemplate{bibliography item}[text] %设置参考文献图标样式数字标号
+\usepackage{multicol} %分栏
+\usepackage{syntonly} %只编译文件是否成功，省时省力
+%\syntaxonly %不注释代表只编译是否成功
+%\usepackage[marginal]{footmisc} %首页添加脚注无缩进
+%\renewcommand{\thefootnote}{} %首页添加脚注无编号
+\usepackage{enumerate}
+\usepackage{subfigure}
+\usepackage{theorem}
+
+%\setbeamertemplate{navigation symbols}{} %取消导航
+\setCJKmainfont{SimHei} %中文用黑体
+
+% 设置页脚格式
+\setbeamertemplate{footline}{%
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=0.3\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+		\usebeamerfont{author in head/foot}\insertshortinstitute \quad \insertshortauthor
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=0.4\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+			\usebeamerfont{title in head/foot}\insertshorttitle
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=0.3\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+			\usebeamerfont{date in head/foot}\insertshortdate{} \quad
+			\insertframenumber{} / \inserttotalframenumber
+	\end{beamercolorbox}}%
+	\vskip0pt%
+}
+
+
+%使用的主题样式和主题色
+%----主题----
+% \usetheme{AnnArbor}
+\usetheme{Antibes}
+%\usetheme{Berlin} %不显示底栏
+% \usetheme{cambridgeUS}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden} %不显示底栏
+%\usetheme{Frankfurt}
+%\usetheme{Ilmenau}
+%\usetheme{Hannover}
+% \usetheme{Berkeley}
+%\usetheme{EastLansing}
+
+
+%----设置颜色、外框颜色等----
+\useinnertheme{circles}
+\useoutertheme{miniframes} %tree、miniframes
+%\usecolortheme{spruce} % 该色调很多不显示底栏
+\usecolortheme{dolphin} % 该色调很多不显示底栏
+%\usecolortheme{crane}
+\usefonttheme{serif} %已有的字体default professionalfonts serif structurebold structureitalicserif structuresmallcapsserif
+
+\definecolor{zdyblue}{RGB}{19,63,127} %千万不能写rgb
+\definecolor{zdyred}{RGB}{184,0,0} %千万不能写rgb
+
+% 设置用acrobat打开就会全屏显示
+\hypersetup{pdfpagemode=FullScreen}
+
+%-------------开始-------------------
+\begin{document}
+
+\title{\bf 心跳信号分类预测}
+% \subtitle{\bf 2021年春 机器学习与模式识别 课程项目}
+\author{李阳}
+\institute[智能19]{
+	山东大学计算机科学与技术学院 \\ \vspace*{0.1cm}
+	2019级智能班
+}
+\date{\today}
+
+\begin{frame}
+    % \maketitle
+    \titlepage    
+\end{frame}
+
+% \begin{frame}
+% 	\frametitle{总目录}
+% 	\begin{multicols}{2}
+% 		\tableofcontents[hideallsubsections]
+% 	\end{multicols}
+% %	\tableofcontents[hideallsubsections]
+% \end{frame}
+
+\section{问题分析}
+\begin{frame}
+    \frametitle{问题分析}
+    \begin{enumerate}
+        \item 多分类问题
+        \item 数据量大
+        \item 特征是一串心跳序列
+        \item 结果提交的是4种不同心跳信号预测的概率，而非单一的预测所属分类
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{多分类问题}
+    内容
+\end{frame}
+
+\begin{frame}
+    \frametitle{数据量大}
+    内容
+\end{frame}
+
+\begin{frame}
+    \frametitle{特征}
+    内容
+\end{frame}
+
+\begin{frame}
+    \frametitle{结果提交}
+    内容
+\end{frame}
+
+\section{数据处理}
+\begin{frame}
+    \frametitle{数据处理}
+    内容
+\end{frame}
+
+\section{方法选用}
+\begin{frame}
+    \frametitle{方法选用}
+    \begin{itemize}
+        \item AdaBoost
+        \item 元分类器是支持向量机(SVM)的AdaBoost
+        \item 随机森林 Random Forest
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{AdaBoost}
+    内容
+\end{frame}
+
+\begin{frame}
+    \frametitle{AdaBoost + SVM}
+    内容
+\end{frame}
+
+\begin{frame}
+    \frametitle{Random Forest}
+    内容
+\end{frame}
+
+\begin{frame}
+    \frametitle{选取最优方案}
+    内容
+\end{frame}
+
+\section{参考}
+\begin{frame}
+    \frametitle{参考内容}
+    \begin{enumerate}
+        \item \href{https://zhuanlan.zhihu.com/p/44695084}{随机森林 - Random Forest}
+        \item \href{https://www.jiqizhixin.com/articles/2020-06-11-6}{决策树VS随机森林}
+        \item \href{https://blog.csdn.net/baidu_31657889/article/details/93891552?utm_source=app&app_version=4.7.1}{利用AdaBoost元算法提高分类性能}
+    \end{enumerate}
+\end{frame}
+
+\section{}
+\begin{frame}
+	\zihao{-4}\centering{Thank you!}
+\end{frame}
+
+\end{document}
