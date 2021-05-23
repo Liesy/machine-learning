@@ -101,67 +101,126 @@
 \section{问题分析}
 \begin{frame}
     \frametitle{问题分析}
+    \begin{minipage}[c]{0.5\linewidth}
+        % \psset{unit=0.8cm}
+        \begin{enumerate}
+            \item 多分类问题
+            \item 数据量大
+            \item 特征是一串心跳序列
+            \item 结果提交的是4种不同心跳信号预测的概率，而非单一的预测所属分类
+        \end{enumerate}
+    \end{minipage}\hspace{1cm}
+    \begin{minipage}{0.3\linewidth}
+        \medskip
+        \begin{figure}[h]
+            \centering
+            \includegraphics[height=.6\textheight]{image/label图.png}
+        \end{figure}
+    \end{minipage}
+\end{frame}
+
+\begin{frame}
+    \frametitle{数据查看}
     \begin{enumerate}
-        \item 多分类问题
-        \item 数据量大
-        \item 特征是一串心跳序列
-        \item 结果提交的是4种不同心跳信号预测的概率，而非单一的预测所属分类
+        \item 实际是多个特征伪装成的一个特征
+        \item 无匿名特征（与贷款违约预测相比）
+        \item 无缺省值
+        \item 特征之间关联性较大，主要是时序上的关联
     \end{enumerate}
-\end{frame}
-
-\begin{frame}
-    \frametitle{多分类问题}
-    内容
-\end{frame}
-
-\begin{frame}
-    \frametitle{数据量大}
-    内容
-\end{frame}
-
-\begin{frame}
-    \frametitle{特征}
-    内容
-\end{frame}
-
-\begin{frame}
-    \frametitle{结果提交}
-    内容
+    \begin{figure}[h]
+        \centering
+        \includegraphics[height=.5\textheight]{image/原数据.jpg}
+    \end{figure}
 \end{frame}
 
 \section{数据处理}
 \begin{frame}
     \frametitle{数据处理}
-    内容
+    \begin{enumerate}
+        \item 通过替换数据类型、用category类代替object类的方法来减小内存占用
+        \item 将heartbeat\_signals列分割成小的特征
+        \item 观察到id列无缺省值无异常值，所以在模型拟合时可以去掉，直接用DataFrame的默认索引代替id值
+    \end{enumerate}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=\textwidth]{image/处理后数据.jpg}
+    \end{figure}
 \end{frame}
 
 \section{方法选用}
 \begin{frame}
     \frametitle{方法选用}
+    主要考虑到三种方法
+    \vspace{1cm}
     \begin{itemize}
         \item AdaBoost
         \item 元分类器是支持向量机(SVM)的AdaBoost
         \item 随机森林 Random Forest
     \end{itemize}
+    \vspace{1cm}
+    树形结构的算法大多不需要进行降维处理，可以保持特征的可解释性
 \end{frame}
 
 \begin{frame}
     \frametitle{AdaBoost}
-    内容
+    \begin{enumerate}
+        \item 最常见的AdaBoost元分类器是决策树，sklearn中默认使用一层的决策树来作为它的元分类器
+        \item 尝试以不同层数的决策树作为元分类器，精确度先增加后减少
+    \end{enumerate}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\textwidth]{image/adaboost1.jpg}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
     \frametitle{AdaBoost + SVM}
-    内容
+    AdaBoost接受所有能样本赋权的分类器作为其元分类器
+    \vspace{0.5cm}
+    \begin{itemize}
+        \item 最常见的赋权分类器有两种，即决策树和支持向量机
+        \item 将AdaBoost和SVM结合，尝试找到一个较优的元分类器
+        \item 实际效果和一层决策树的AdaBoost一致，并不是很优
+    \end{itemize}    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\textwidth]{image/adaboost2.jpg}
+    \end{figure}
+    \vspace{0.5cm}
+    对比之下，还是决策树更适合与AdaBoost搭配
 \end{frame}
 
 \begin{frame}
     \frametitle{Random Forest}
-    内容
+    拟合效果：\includegraphics[width=0.4\textwidth]{image/randomforest.jpg}
+    \begin{block}{随机森林的优势}
+    \begin{enumerate}
+        \item 随机森林适用于拥有大型数据集的情况，可以处理数千个输入变量而无需变量删除
+        \item 能够处理很高维度的数据，并且不用做特征选择(因为特征子集是随机选择的)
+        \item 可以在大部分数据丢失时保持准确性
+        \item 模型泛化能力强
+        \item 对于不平衡的数据集来说，它可以平衡误差
+        \item 不需要很多参数调整就可以达到不错的效果
+    \end{enumerate}
+    \end{block}
 \end{frame}
 
 \begin{frame}
     \frametitle{选取最优方案}
+    可以看出以8层决策树为元分类器的AdaBoost和随机森林的准确率较高，表现较好，最终选择使用随机森林
+    
+    \vspace{0.5cm}
+    进一步优化
+    \begin{enumerate}
+        \item PCA降维，减少随机森林要处理的特征数量，加快随机森林模型的训练速度
+        \item 对模型进行超参数调优，进一步提高准确率
+    \end{enumerate}
+    \vspace{0.5cm}
+    计算成本高是随机森林的最大缺点之一，如果只想简单地拥有最佳性能的模型，并且可以牺牲解释特征的重要性，那么PCA可能会很有用，但并不是必须的
+\end{frame}
+
+\begin{frame}
+    \frametitle{实现}
     内容
 \end{frame}
 
@@ -172,6 +231,7 @@
         \item \href{https://zhuanlan.zhihu.com/p/44695084}{随机森林 - Random Forest}
         \item \href{https://www.jiqizhixin.com/articles/2020-06-11-6}{决策树VS随机森林}
         \item \href{https://blog.csdn.net/baidu_31657889/article/details/93891552?utm_source=app&app_version=4.7.1}{利用AdaBoost元算法提高分类性能}
+        \item \href{https://www.zhihu.com/question/26726794/answer/151282052}{各种机器学习算法的应用场景}
     \end{enumerate}
 \end{frame}
 
