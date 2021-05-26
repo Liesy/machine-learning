@@ -205,6 +205,7 @@
     \end{block}
 \end{frame}
 
+\section{实现}
 \begin{frame}
     \frametitle{选取最优方案}
     可以看出以8层决策树为元分类器的AdaBoost和随机森林的准确率较高，表现较好，最终选择使用随机森林
@@ -220,7 +221,43 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{实现}
+    \frametitle{参数调优}
+    考虑对模型在未知数据上的评估性能的影响
+    \vspace{1cm}
+    \begin{enumerate}
+        \item 参数n\_estimators的影响最大
+        \item max\_depth次之，最大深度也代表了最高复杂度
+        \item min\_samples\_leaf和min\_samples\_split并列
+        \item max\_features对模型的影响较小
+        \item criterion一般使用gini，具体需要视情况而定
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{交叉验证寻找最优n\_estimators}
+    先以10为间隔，可以求出在71附近最优
+    
+    准确率为0.9484999999999999
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=\textwidth]{image/n_estimators.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    进一步细化，在65-75之间以逐个进行寻找
+    
+    最终得到最优的n\_estimators为72
+    
+    此时准确率提高至0.9485000000000001
+    \begin{figure}[h]
+        \centering
+        \includegraphics[height=0.5\textheight]{image/n_estimators_final.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{网格搜索对其余参数进行调优}
     内容
 \end{frame}
 

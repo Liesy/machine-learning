@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.11.10)  23 MAY 2021 16:01
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.11.10)  26 MAY 2021 08:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1366,9 +1366,21 @@ File: image/randomforest.jpg Graphic file (type bmp)
 
 ] [10
 
-] [11
+]
+File: image/n_estimators.png Graphic file (type bmp)
+<image/n_estimators.png>
+ [11
 
-] [12
+]
+File: image/n_estimators_final.png Graphic file (type bmp)
+<image/n_estimators_final.png>
+ [12
+
+] [13
+
+] [14
+
+] [15
 
 ]
 \tf@nav=\write7
@@ -1380,13 +1392,13 @@ File: image/randomforest.jpg Graphic file (type bmp)
 \tf@snm=\write9
 \openout9 = `slides.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 242.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 242.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 279.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 279.
  (./slides.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 242.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 242.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 279.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 279.
 Package rerunfilecheck Info: File `slides.out' has not changed.
-(rerunfilecheck)             Checksum: 19EBD2DE0EC8A5E2740483DA4C2C6C94;300.
+(rerunfilecheck)             Checksum: 1F104A10332F13AEFE8DA86369390F14;359.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1396,12 +1408,12 @@ Package logreq Info: Writing requests to 'slides.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34715 strings out of 481399
- 719849 string characters out of 5928871
- 1220178 words of memory out of 5000000
- 51425 multiletter control sequences out of 15000+600000
+ 34734 strings out of 481399
+ 720217 string characters out of 5928871
+ 1221370 words of memory out of 5000000
+ 51442 multiletter control sequences out of 15000+600000
  537691 words of font info for 72 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  61i,19n,68p,847b,818s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on slides.pdf (12 pages).
+Output written on slides.pdf (15 pages).

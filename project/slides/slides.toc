@@ -6,4 +6,6 @@
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {3}{方法选用}{5}{0}{3}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {4}{写在最后}{11}{0}{4}
+\beamer@sectionintoc {4}{实现}{9}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {5}{写在最后}{14}{0}{5}
