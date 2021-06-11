@@ -258,7 +258,18 @@
 
 \begin{frame}
     \frametitle{网格搜索对其余参数进行调优}
-    内容
+    分别对max\_depth min\_samples\_leaf min\_samples\_split max\_features进行网格搜索
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.9\textwidth]{image/1.jpg}
+    \end{figure}
+    可以发现原模型已经非常接近模型的上限，max\_features对准确度的提升较大
+
+    最终得到的模型在准确率上提升了0.5\%
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.4\textwidth]{image/rfc_after_adjust.jpg}
+    \end{figure}
 \end{frame}
 
 \section{写在最后}
